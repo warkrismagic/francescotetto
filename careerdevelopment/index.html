@@ -16,184 +16,98 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             min-height: 100vh;
-            padding: 2rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .header {
             text-align: center;
-            margin-bottom: 3rem;
+            max-width: 600px;
+            padding: 2rem;
         }
         
-        .header h1 {
+        h1 {
             font-size: 2.5rem;
             font-weight: 300;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
         
-        .header .subtitle {
-            font-size: 1.1rem;
+        .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
             font-weight: 300;
         }
         
-        .nav-tabs {
-            display: flex;
-            justify-content: center;
+        .status {
+            font-size: 1rem;
             margin-bottom: 2rem;
-            gap: 1rem;
+            opacity: 0.8;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
         }
         
-        .tab-button {
-            padding: 1rem 2rem;
+        .links {
+            margin-top: 2rem;
+        }
+        
+        .link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.75rem 1.5rem;
             background: rgba(255,255,255,0.2);
             color: white;
-            border: 1px solid rgba(255,255,255,0.3);
+            text-decoration: none;
             border-radius: 50px;
-            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.3);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            font-size: 1rem;
         }
         
-        .tab-button:hover,
-        .tab-button.active {
+        .link:hover {
             background: rgba(255,255,255,0.3);
             transform: translateY(-2px);
         }
         
-        .diagram-container {
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+        .email {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
         
-        .diagram-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            font-weight: 300;
-        }
-        
-        .diagram-frame {
-            width: 100%;
-            min-height: 600px;
-            border: none;
-            border-radius: 8px;
-            background: white;
-        }
-        
-        .diagram-frame.vertical {
-            min-height: 1280px;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
+        .email a {
             color: white;
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
+            border-bottom: 1px dotted rgba(255,255,255,0.5);
         }
         
-        .back-link:hover {
-            opacity: 1;
-        }
-        
-        .description {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            font-size: 1.1rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .tab-button {
-                width: 200px;
-                text-align: center;
-            }
-            
-            .diagram-frame {
-                min-height: 400px;
-            }
+        .email a:hover {
+            border-bottom: 1px solid white;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="/" class="back-link">← Back to Portfolio</a>
+        <h1>Professional Background</h1>
+        <div class="subtitle">Systems Architecture & Technology Experience</div>
         
-        <div class="header">
-            <h1>Career Development Plan</h1>
-            <div class="subtitle">Systems Architecture Transition Strategy</div>
+        <div class="status">
+            <strong>Content Coming Soon</strong><br>
+            Professional experience, technical projects, and systems architecture expertise
         </div>
         
-        <div class="description">
-            A systematic approach to transitioning into systems architecture, featuring a 30-day professional development sprint 
-            culminating in AWS Summit NYC networking and portfolio presentation.
+        <div class="links">
+            <a href="/" class="link">Back to Portfolio</a>
         </div>
         
-        <div class="nav-tabs">
-            <button class="tab-button active" onclick="showTab('overview')">Career Overview</button>
-            <button class="tab-button" onclick="showTab('sprint')">30-Day Sprint</button>
-        </div>
-        
-        <div id="overview" class="tab-content active">
-            <div class="diagram-container">
-                <div class="diagram-title">5-Year Career Progression</div>
-                <iframe class="diagram-frame" src="https://app.terrastruct.com/diagrams/200945406" 
-                        title="Career Overview Diagram"></iframe>
-            </div>
-        </div>
-        
-        <div id="sprint" class="tab-content">
-            <div class="diagram-container">
-                <div class="diagram-title">30-Day Professional Development Sprint</div>
-                <iframe class="diagram-frame vertical" src="https://app.terrastruct.com/diagrams/32328629" 
-                        title="30-Day Sprint Diagram"></iframe>
-            </div>
+        <div class="email">
+            Contact: <a href="mailto:francesco@francescotetto.dev">francesco@francescotetto.dev</a>
         </div>
     </div>
-    
-    <script>
-        function showTab(tabName) {
-            // Hide all tabs
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            // Remove active class from all buttons
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(button => button.classList.remove('active'));
-            
-            // Show selected tab
-            document.getElementById(tabName).classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-        }
-    </script>
 </body>
 </html>
